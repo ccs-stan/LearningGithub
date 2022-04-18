@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Github with Stan</title>
+    <style>
+        body {
+            background-color: darkslateblue;
+            color: ghostwhite;
+            margin-left: 5%;
+            margin-right: 5%;
+            font-size: large;
+        }
+
+        #myNav {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #submenu {
+            padding-left: 3em;
+            padding-right: 3em
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        h6 {
+            text-align: center;
+            margin-top: -2em;
+        }
+
+        .details {
+            visibility: hidden;
+            height: auto;
+            height: 2px;
+        }
+
+        #subtitle {
+            text-align: center;
+        }
+
+        .subsection {
+            font-style: italic;
+            text-decoration: underline;
+        }
+
+        #sub-header {
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        a:link {
+            color: khaki;
+        }
+
+        a:visited {
+            color: yellow;
+        }
+
+        a:hover {
+            color: cornflowerblue;
+        }
+        footer {
+            text-aligh: center;
+        }
+    </style>
+    <script>
+        function toggle(ele) {
+            if (ele.children.length > 1) {
+                if (ele.children[1].style.visibility == 'visible') {
+                    ele.children[1].style.visibility = 'hidden'
+                    ele.children[1].style.height = '0px'
+                }
+                else {
+                    ele.children[1].style.visibility = 'visible'
+                    ele.children[1].style.height = 'auto'
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Learning Github with Stan</h1>
+        <h2 id="subtitle"><em>A beginner's guide</em></h2>
+        <h6>Click a topic to see show/hide details</h6>
+        <div id='myNav'>
+            <nav><a href="#github" id="submenu">Github</a> <a href="#git" id="submenu">Git</a> </nav>
+        </div>
+        <h2 id="github" class="subsection" class='title'>Working with Github using your browser</h2>
+
+        <div onclick="toggle(this);">
+            <h3 id="ghub">What is Github</em></h3>
+            <div class='details'>
+                <p>
+                <ul>
+                    <li>Think of Github is a cloud server that contains collections of code/programs known as <a
+                            href='#repo'>repositories</a>.</li>
+                    <li>You start by creating a Github account at <a href="github.com">github.com</a>.</li>
+                    <li>After creating your account you can <a href="#createRepo">create a repository</a>, using the
+                        green "New" button or
+                        <a href="#fork">fork</a> an existing repository owned by another Github account. By default your
+                        repository will be public, however you
+                        can make it <a href="privateRepo">private</a>.
+                    </li>
+                    <li>After creating your repository, you can click on a repository name and <a href="#edit">edit</a>
+                        the files in Github using your
+                        browser, or you can <a href='#cloneRepo'> clone</a> your repository to your local computer.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div onclick="toggle(this);">
+            <h3 id="repo">What is a repository</em></h3>
+            <div class='details'>
+                <p>A repository is a collection of files (usually computer programs) that are associated. An example
+                    might be the program files that make Github work. Just above the
+                    first line of the file you will see an icon on the right that looks like a pencil. You can then edit
+                    any other files that need changing using this process.
+                <ul>
+                    <li>Click the pencil to edit the file.</li>
+                    <li>When you finish changing the file scroll down to "Commit changes".</li>
+                    <li>There are two text boxes you can type into. Put a brief description of the chnages you made in
+                        the Github box and a detailed description of the changes
+                        in the lower(larger) box.
+                    </li>
+                    <li>For this discusssion, leave "Commit directly to the main branch selected.</li>
+                    <li>Click the green "Commit changes" button and your changes will be saved to the repository.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div onclick="toggle(this);">
+            <h3 id="createRepo">Create a repository</h3>
+            <div class="details">
+                <p>There is a "Repositories" link at the Github of your Github home page. Click that link to view your
+                    repositories. You should see a green "New" button near
+                    the Github right area. Click that button to create a new repository. For the purpose of this
+                    document, just give the repository a name and accept the default
+                    options. The name of the repository should reflect the purpose of the collection of files that will
+                    be stored in the repository.
+                </p>
+            </div>
+        </div>
+        <div onclick="toggle(this);">
+            <div onclick="toggle(this);">
+                <h3 id="fork">Fork a repository</em></h3>
+                <div class='details'>
+                    <p>If you are building off someone else's work, you can <em>fork</em> that repository. This creates
+                        a new repository in your Github account that contains the
+                        contents of the original repository. Thigs gives you an easy starting place to customize
+                        existing files/code.</p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="edit">Edit a file in your repository</h3>
+                <div class='details'>
+                    <p>When you see the list of files in your repository, you can click one of the files to view the
+                        contents. </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="delete">Delete a repository from your account</h3>
+                <div class='details'>
+                    <p>Note: You cannot recover a deleted repository on Github. Only do this if it will be painless to
+                        see the contents of this repository again!
+                        <br>If your repository is published on Github, your published work will also be deleted.
+                    <ul>
+                        <li>Open the repository on Github</li>
+                        <li>Click on the Settings link above the list of files</li>
+                        <li>Scroll to the bottom and click on "Delete this repository"</li>
+                        <li>Type the text on the last line (your Github user ID "/" the repository name</li>
+                        <li>Click on the text "I understand the consequences. Delete this repository.</li>
+                        <li>You will need to type your Github password to approve the deletion.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <h2 id="git" class="subsection">Working with Github on your local computer</h2>
+            <div onclick="toggle(this);">
+                <h3 id="gitInstall">Install Git on your local computer.</h3>
+                <div class='details'>
+                    <p>Please see <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">these
+                            instructions</a> for installing Git. The instructions vary depending on the
+                        operating system (O/S) your computer runs. Follow the directorys for your O/S. If you are
+                        running Windows there is considerable benefit to installing Git for Windows
+                        as shown in the instructions. Only after installing Git (and Git for Windows if you have a
+                        Windows O/S will the following instructions work.)
+                        <br>I've also created a minimal <a href="#trouble">troubleshooting</a> section to try to help
+                        with some common problems when you are getting started.</li>
+                    </p>
+                </div>
+            </div>
+
+            <div onclick="toggle(this);">
+                <h3 id="runningGit">Running Git on your local machine.</h3>
+                <div class='details'>
+                    <p>Open a terminal window using <em>terminal</em> or <em>git bash</em>. You will do your work from
+                        the command line now.
+                    <ul>
+                        <li>Linux O/S - click the Menu button on the taskbar and type "terminal". Click on the terminal
+                            program.</li>
+                        <li>Mac O/S - hold down "command" and press the spacebar and type "terminal". Click on the
+                            terminal program.</li>
+                        <li>Windows - click the Windows button on the taskbar and type "git bash". Click on the Git Bash
+                            program.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="cloneRepo">Cloning a Repository</em></h3>
+                <div class='details'>
+                    <p>
+                        The repository you want to clone is stored on Github and you must have access to it, either
+                        because you own it, someone has invited you to work on it or because
+                        it is a public repository. <br><em>It is important to run the clone command from a directory
+                            that is not a part of an existing repository on your local machine. If you
+                            "nest" repositories, Git becomes confused and your repository will be corrupted and
+                            unusable.</em> For this reason I recommend you create a directory, perhaps called
+                        myRepositories, and always run the clone from that directory. <br><em>The clone command will
+                            create a new subdirectory that is the name of the repository you are cloning
+                            and fill that directory with the repository contents.</em> You will then need to change to
+                        that directory using the "cd" command to see the contents of the repository
+                        on your local computer. <br><em>Git commands are very helpful by often letting you know what
+                            needs to be done to fix a problem or to offer the next step in working with
+                            your files. "git status" will show you the status of your repository at any time!</em>
+                    <ul>
+                        <li>Create the repository using the github.com website.</li>
+                        <li>On your PC change to a high level directory where your git projects with be stored (ie. "cd"
+                            - with no parameter, puts you in your home directory.</li>
+                        <li>Type "git init" to setup the files Git will need to manage files on your PC.</li>
+                        <li>Type "git clone git@github.com:&lt;your Github user name here&gt;&lt;your Github repository
+                            name here&gt;.git" to clone this repository.
+                            <br>Replace &lt;your Github user name here&gt; with your Github user name. Do not include
+                            the &lt; or &gt; symbols.
+                            <br>Replace &lt;your Github repository name here&gt; with the Github repository name. Do not
+                            include the &lt; or &gt; symbols.
+                            <br>The full clone command can be found on Github by clicking the "Code" button in the
+                            repository you want to clone.
+                        </li>
+                        <li>Type "cd &lt;directory&gt; where directory is the Github repository name</li>
+                        <li>Type "git status" to confirm git knows about your files - suggestions may be displayed in
+                            the output.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="addFile">Adding a File to Your Repository</em></h3>
+                <div class='details'>
+                    <p>
+                        You can create a new, empty file called "index.html" in your repository by typing "touch
+                        index.html". (Make sure you are in the repository directory!)
+                        <br>You can edit a file in your repository by typing the name of your editor and the filename
+                        (ex. "notepad index.html" or "code index.html" - if VS Code is installed.)
+                        <br>After creating/editing your new file(s) you need to let Git know that the new file needs to
+                        be added to your repository by typing "git add index.html" to add
+                        a single file to the repository or "git -add -A" to add all new files to the repository.
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="updateRepo">Updating the Files in the Repository</em></h3>
+                <div class='details'>
+                    <p>
+                        So far you have updated the files, but the repository needs to be told to update the repository
+                        version of those file on your local computer.
+                        <br>The "commit" command below is required for the changes you've made to be recorded in your
+                        repository. You must include a short description of the changes you
+                        made with the commit command. -m preceeds the description of your changes and the description
+                        must be enclosed in quotes.
+                        <br>git commit -m "description of the changes you made here for documentation"
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="updateGithub">Updating Github from Your Local Machine</em></h3>
+                <div class='details'>
+                    <p>
+                        If your local repository was cloned from a Github repository you will only need to type the
+                        command below.
+                        <br>Type "git push origin main" to send your changes to your github web repository.
+                        <br><br>However, if you built the repository on your local machine and want update Github with
+                        your local repostory you must do the following:
+                    <ul>
+                        <li>You must first <a href="createRepo">create the repository</a> on Github with the same name
+                            as your local repository</li>
+                        <li>Type "git remote set-url origin https://github.com/&lt;your github name&gt;/&lt;local
+                            repository name&gt;.git" to point the local repository to
+                            the Github repository you created in the previous step.</li>
+                        <li>Type "git push origin main" to update Github from your local repository.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="overwrite">Overwriting your local repository with what's in the Github repository.</h3>
+                <div class='details'>
+                    <p>
+                    <ul>
+                        <li>Type "git pull" to overwrite your changes with the files in the github web repository.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="publishing">Publishing your Github Repository</h3>
+                <div class='details'>
+                    <p>Github provides a tool allowing you to publish your work so others can see your results, rather
+                        than your repository.
+                        <br>To do this follow the following steps:
+                    <ul>
+                        <li>Open your repository on Github (browser)</li>
+                        <li>Click on "Settings" above the code.</li>
+                        <li>Click on "Pages" on the left column that is displayed under Settings.</li>
+                        <li>Select "Branch: main", / (root) & click the "Save button".</li>
+                    </ul>
+                    It takes a few minutes for the process to publish your repository. You should see a box on the
+                    "Pages" screen that tells you the URL for your publisehed repository.
+                    <br>Click that link to see your work and share the link with your friends that you want to see your
+                    work.
+                    </p>
+                </div>
+            </div>
+            <div onclick="toggle(this);">
+                <h3 id="trouble">Git Troubleshooting Tips</em></h3>
+                <div class='details'>
+                    <p>It is always recommended to type "git status" when things are not working right. The output from
+                        this command often gives you clues, and often the answer to fix the
+                        problem you are having.
+                    <ul>
+                        <li>Git error - Author identity unknown - *** Please tell me who you are
+                            <br>Git on your local machine does not know your Github identify. It is asking you to type
+                            the commands below (these commands are displayed along with
+                            the error message)
+                            <br>git config --global user.email "you@example.com" - type this command, but replace
+                            you@example.com with your email address (keep the quotes)
+                            <br>git config --global user.name "Your Name" - type this command, but replace Your Name
+                            with your name (keep the quotes)
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <footer>Copyright 2022 Stan Crump</footer>
+</body>
+
+</html>
